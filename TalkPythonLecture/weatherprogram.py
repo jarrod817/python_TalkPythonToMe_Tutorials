@@ -1,6 +1,7 @@
 import requests, bs4, collections
 
-WeatherReport = collections.namedtuple('WeatherReport','cond, temp, units, loc')
+WeatherReport = collections.namedtuple('WeatherReport', 'cond, temp, units, loc')
+
 
 def main():
     print_the_header()
@@ -9,7 +10,6 @@ def main():
     report = get_weather_from_html(html)
     # display forcast
     display_weather_forecast(report)
-
 
 
 def print_the_header():
@@ -46,6 +46,7 @@ def get_weather_from_html(html):
 def find_city_state_from_location(location: str):  # :str is a type hint
     location = location.split('\n')[0]
     return location
+
 
 def display_weather_forecast(report):
     print('The weather in {} is {} {} and {}'.format(report.loc, report.temp, report.units, report.cond))
