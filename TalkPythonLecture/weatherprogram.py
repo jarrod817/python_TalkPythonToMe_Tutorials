@@ -8,7 +8,6 @@ def main():
     code = input('What zip code do you want the weather for? ')
     html = get_html_from_web(code)
     report = get_weather_from_html(html)
-    # display forcast
     display_weather_forecast(report)
 
 
@@ -56,7 +55,6 @@ def cleanup_text(text: str):
     if not text:
         return text
     text = text.strip()
-
     return text
 
 
